@@ -49,8 +49,10 @@ public class Building implements IBuilding {
         sensors.add(sensor);
     }
     
-    
-    
+    @Override
+    public String toString() {
+        return name;
+    }
     
     
 }

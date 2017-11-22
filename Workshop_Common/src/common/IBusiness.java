@@ -17,5 +17,7 @@ public interface IBusiness {
     void createSensor(IBuilding building, SensorType type, int id);
     void removeBuilding(IBuilding building);
     void removeSensor(IBuilding building, ISensor sensor);
+    void saveBuildings();
+    void loadBuildings();
     ArrayList<? extends IBuilding> getBuildings();
 }

@@ -45,11 +45,13 @@ public class AddBuildingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         business = UI.getInstance().getBusiness();
+        UI.getInstance().getStage().setTitle("Add Building");
     }   
     
     public void create() {
         if(!nameTF.getText().isEmpty() && !streetnameTF.getText().isEmpty() && !houseNumberTF.getText().isEmpty() && !zipcodeTF.getText().isEmpty() && !countryTF.getText().isEmpty()) {
             business.createBuilding(nameTF.getText().toString(), streetnameTF.getText().toString(), houseNumberTF.getText().toString(), zipcodeTF.getText().toString(), countryTF.getText().toString());
+            business.saveBuildings();
             Parent root;
             try {
                 root = FXMLLoader.load(getClass().getResource("fxml/Graphs.fxml"));

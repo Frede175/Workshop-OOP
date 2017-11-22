@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ui.AddBuildingController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AddBuildingController">
    <children>
       <Label layoutX="389.0" layoutY="59.0" text="Create Building">
          <font>
@@ -57,7 +56,7 @@
             <AnchorPane>
                <children>
                   <Label text="Enter country" />
-                  <TextField fx:id="countryTF4" layoutY="21.0" prefHeight="27.0" prefWidth="210.0" />
+                  <TextField fx:id="countryTF" layoutY="21.0" prefHeight="27.0" prefWidth="210.0" />
                </children>
                <VBox.margin>
                   <Insets top="15.0" />
@@ -66,5 +65,10 @@
          </children>
       </VBox>
       <Button layoutX="453.0" layoutY="477.0" mnemonicParsing="false" onAction="#create" text="Create" />
+      <Label fx:id="error" layoutX="392.0" layoutY="531.0" opacity="0.0" text="Please fill out all fields" textFill="RED">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

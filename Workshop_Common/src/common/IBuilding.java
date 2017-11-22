@@ -12,4 +12,7 @@ package common;
 public interface IBuilding {
     String getName();
     IAddress getAddress();
+    
+    @Override
+    String toString();
 }

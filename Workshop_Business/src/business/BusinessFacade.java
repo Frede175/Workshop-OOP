@@ -31,6 +31,7 @@ public class BusinessFacade implements IBusiness {
         Address address = new Address(street, number, zipCode, country);
         Building building = new Building(name, address);
         buildings.add(building);
+        saveBuildings();
     }
 
     @Override
@@ -38,7 +39,9 @@ public class BusinessFacade implements IBusiness {
         int i = buildings.indexOf(building);
         if (i != -1) {
             buildings.remove(i);
+            
         }
+
     }
 
     @Override
@@ -46,6 +49,7 @@ public class BusinessFacade implements IBusiness {
         int i = buildings.indexOf(building);
         if (i != -1) {
            buildings.get(i).removeSensor(sensor);
+           saveBuildings();
         }
     }
 
@@ -54,6 +58,7 @@ public class BusinessFacade implements IBusiness {
         int i = buildings.indexOf(building);
         if (i != -1) {
            buildings.get(i).addSensor(id, type);
+           saveBuildings();
         }
     }
 
@@ -62,4 +67,15 @@ public class BusinessFacade implements IBusiness {
         return buildings;
     }
 
+    @Override
+    public void loadBuildings() {
+        buildings = (ArrayList<Building>) persistence.load(buildings.getClass());
+    }
+
+    @Override
+    public void saveBuildings() {
+        persistence.save(buildings);
+    }
+
+    
 }
