@@ -12,6 +12,6 @@ import java.lang.reflect.Type;
  * @author fsr19
  */
 public interface IPersistence {
-    boolean save(Type type, Object obj);
+    boolean save(Object obj);
     Object load(Type type);
 }

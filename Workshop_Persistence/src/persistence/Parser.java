@@ -32,8 +32,8 @@ public class Parser {
         gson = new Gson();
     }
     
-    public boolean writeObject(Type type, Object obj) {
-        String json = gson.toJson(obj, type);
+    public boolean writeObject(Object obj) {
+        String json = gson.toJson(obj, obj.getClass());
         
         File file = new File(fileName);
         

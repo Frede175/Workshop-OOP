@@ -22,8 +22,8 @@ public class PersistenceFacade implements IPersistence {
     
     
     @Override
-    public boolean save(Type type, Object obj) {
-        return parser.writeObject(type, obj);
+    public boolean save(Object obj) {
+        return parser.writeObject(obj);
     }
 
     @Override
