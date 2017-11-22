@@ -5,6 +5,12 @@
  */
 package starter;
 
+import common.IBusiness;
+import common.IPersistence;
+import common.IUI;
+import persistence.PersistenceFacade;
+import ui.UI;
+
 /**
  *
  * @author fsr19
@@ -15,7 +21,17 @@ public class Workshop_Starter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        IPersistence persistence = new PersistenceFacade();
+        
+        IBusiness business;
+        
+        business.injectPersistence(persistence);
+        
+        IUI ui = new UI();
+        
+        ui.injectBusiness(business);
+        ui.startApplication(args);
     }
+    
     
 }
