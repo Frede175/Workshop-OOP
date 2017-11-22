@@ -57,4 +57,9 @@ public class BusinessFacade implements IBusiness {
         }
     }
 
+    @Override
+    public ArrayList<? extends IBuilding> getBuildings() {
+        return buildings;
+    }
+
 }
