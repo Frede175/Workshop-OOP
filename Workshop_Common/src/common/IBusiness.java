@@ -5,6 +5,8 @@
  */
 package common;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author fsr19
@@ -15,4 +17,5 @@ public interface IBusiness {
     void createSensor(IBuilding building, SensorType type, int id);
     void removeBuilding(IBuilding building);
     void removeSensor(IBuilding building, ISensor sensor);
+    ArrayList<IBuilding> getBuildings();
 }
