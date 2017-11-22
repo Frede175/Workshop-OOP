@@ -15,5 +15,5 @@ import java.util.Date;
 public interface ISensor {
     ArrayList<IReading> getRecords();
     ArrayList<IReading> getRecordsByInterval(Date startDate, Date endDate);
-    ArrayList<IReading> getRecordsByMeasure();
+    ArrayList<IReading> getRecordsByMeasure(double measure);
 }
