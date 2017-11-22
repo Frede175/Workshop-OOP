@@ -11,6 +11,7 @@ import common.IPersistence;
 import common.ISensor;
 import common.SensorType;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -69,9 +70,10 @@ public class BusinessFacade implements IBusiness {
 
     @Override
     public void loadBuildings() {
-        ArrayList<Building> loaded = (ArrayList<Building>) persistence.load(buildings.getClass());
+        Building[] loaded = (Building[]) persistence.load(Building[].class);
         if (loaded != null) {
-            buildings = loaded;
+            buildings.clear();
+            buildings.addAll(Arrays.asList(loaded));
         }
     }
 
