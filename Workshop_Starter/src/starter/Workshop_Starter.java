@@ -5,6 +5,7 @@
  */
 package starter;
 
+import business.BusinessFacade;
 import common.IBusiness;
 import common.IPersistence;
 import common.IUI;
@@ -23,7 +24,7 @@ public class Workshop_Starter {
     public static void main(String[] args) {
         IPersistence persistence = new PersistenceFacade();
         
-        IBusiness business;
+        IBusiness business = new BusinessFacade();
         
         business.injectPersistence(persistence);
         
