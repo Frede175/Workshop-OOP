@@ -29,14 +29,21 @@ public class UI extends Application implements IUI{
     
     private IBusiness business;
     
+    private Stage primaryStage;
+    
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        
+        this.primaryStage = primaryStage;
+        Parent root;
+        if(business.getBuildings() == null) {
+            root = FXMLLoader.load(getClass().getResource("fxml/AddBuilding.fxml"));
+            primaryStage.setTitle("Add Building");
+        } else {
+            root = FXMLLoader.load(getClass().getResource("fxml/Graphs.fxml"));
+            primaryStage.setTitle("Graphs");
+        }
         Scene scene = new Scene(root);
-        
-        primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -54,6 +61,10 @@ public class UI extends Application implements IUI{
 
     IBusiness getBusiness() {
         return business;
+    }
+    
+    Stage getStage() {
+        return primaryStage;
     }
     
 }

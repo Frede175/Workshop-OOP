@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ui.EditBuildingController">
+   <children>
+      <Label fx:id="nameL" layoutX="37.0" layoutY="34.0" text="Building name">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <VBox layoutX="597.0" layoutY="172.0" prefHeight="200.0">
+         <children>
+            <TableView fx:id="sensorsTV" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="nameC" prefWidth="146.9667510986328" text="Sensor" />
+                <TableColumn fx:id="typeC" minWidth="8.033279418945312" prefWidth="51.99993896484375" text="Type" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox layoutX="215.0" layoutY="177.0" prefHeight="200.0">
+         <children>
+            <HBox prefWidth="200.0">
+               <children>
+                  <RadioButton fx:id="tempT" mnemonicParsing="false" selected="true" text="Temperatur">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="typeGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="co2T" mnemonicParsing="false" text="CO2" toggleGroup="$typeGroup">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Label text="Sensor name">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="nameTF">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <AnchorPane>
+               <children>
+                  <Button layoutX="70.0" mnemonicParsing="false" onAction="#create" text="Create" />
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
