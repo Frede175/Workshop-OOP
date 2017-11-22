@@ -18,5 +18,4 @@ public interface ISensor {
     ArrayList<IReading> getRecordsByMeasure(double measure);
     int getID();
     SensorType getType();
-    void addReading(Date date, double measure);
 }

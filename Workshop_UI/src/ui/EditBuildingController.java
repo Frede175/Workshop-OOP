@@ -134,9 +134,9 @@ public class EditBuildingController implements Initializable {
     
     public void create() {
         if(tempT.isSelected()) {
-            building.addSensor(getNextSensorID(), SensorType.TEMPERATURE);
+            business.createSensor(building, SensorType.TEMPERATURE, getNextSensorID());
         } else {
-            building.addSensor(getNextSensorID(), SensorType.CO2);
+            business.createSensor(building, SensorType.CO2, getNextSensorID());
         }
         business.saveBuildings();
         reload();

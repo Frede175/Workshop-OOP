@@ -45,7 +45,6 @@ public class Building implements IBuilding {
         }
     }
 
-    @Override
     public void addSensor(int id, SensorType type) {
         Sensor sensor = new Sensor(id, type);
         sensor.addReading(new Date(2017, 11, 22), 10 * Math.random());
@@ -62,6 +61,13 @@ public class Building implements IBuilding {
     public ArrayList<ISensor> getSensors() {
         ArrayList<ISensor> sensors = (ArrayList<ISensor>) this.sensors.clone();
         return sensors;
+    }
+
+    public void addReading(ISensor sensor, Date date, double measure) {
+        int i = sensors.indexOf(sensor);
+        if (i != -1) {
+           sensors.get(i).addReading(date, measure);
+        }
     }
     
     

@@ -12,6 +12,7 @@ import common.ISensor;
 import common.SensorType;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  *
@@ -80,6 +81,15 @@ public class BusinessFacade implements IBusiness {
     @Override
     public void saveBuildings() {
         persistence.save(buildings);
+    }
+
+    @Override
+    public void addReading(IBuilding building, ISensor sensor, Date date, double measure) {
+        int i = buildings.indexOf(building);
+        if (i != -1) {
+           buildings.get(i).addReading(sensor, date, measure);
+           saveBuildings();
+        }
     }
 
     

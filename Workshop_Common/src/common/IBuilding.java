@@ -15,7 +15,6 @@ public interface IBuilding {
     String getName();
     IAddress getAddress();
     ArrayList<ISensor> getSensors();
-    void addSensor(int id, SensorType type);
     void removeSensor(ISensor sensor);
     
     @Override

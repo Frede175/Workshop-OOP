@@ -65,7 +65,6 @@ public class Sensor implements ISensor {
         return type;
     }
 
-    @Override
     public void addReading(Date date, double measure) {
         recordings.add(new Reading(date, measure));
     }
