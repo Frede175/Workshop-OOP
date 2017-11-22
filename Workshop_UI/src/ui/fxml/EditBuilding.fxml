@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ui.EditBuildingController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.EditBuildingController">
    <children>
       <Label fx:id="nameL" layoutX="37.0" layoutY="34.0" text="Building name">
          <font>
@@ -20,8 +19,8 @@
          <children>
             <TableView fx:id="sensorsTV" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn fx:id="nameC" prefWidth="146.9667510986328" text="Sensor" />
-                <TableColumn fx:id="typeC" minWidth="8.033279418945312" prefWidth="51.99993896484375" text="Type" />
+                <TableColumn fx:id="nameC" prefWidth="70.0" text="Sensor ID" />
+                <TableColumn fx:id="typeC" minWidth="8.033279418945312" prefWidth="129.0" text="Type" />
               </columns>
             </TableView>
          </children>
@@ -45,16 +44,6 @@
                   </RadioButton>
                </children>
             </HBox>
-            <Label text="Sensor name">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </Label>
-            <TextField fx:id="nameTF">
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin>
-            </TextField>
             <AnchorPane>
                <children>
                   <Button layoutX="70.0" mnemonicParsing="false" onAction="#create" text="Create" />
@@ -65,5 +54,7 @@
             </AnchorPane>
          </children>
       </VBox>
+      <Button fx:id="removeBtn" layoutX="663.0" layoutY="389.0" mnemonicParsing="false" onAction="#remove" text="Remove" />
+      <Button layoutX="902.0" layoutY="34.0" mnemonicParsing="false" onAction="#close" text="Close" />
    </children>
 </AnchorPane>

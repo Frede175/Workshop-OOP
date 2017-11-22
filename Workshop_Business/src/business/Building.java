@@ -10,6 +10,7 @@ import common.IBuilding;
 import common.ISensor;
 import common.SensorType;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -36,7 +37,7 @@ public class Building implements IBuilding {
         return address;
     }
     
-    
+    @Override
     public void removeSensor(ISensor sensor) {
         int i = sensors.indexOf(sensor);
         if (i != -1) {
@@ -44,14 +45,23 @@ public class Building implements IBuilding {
         }
     }
 
+    @Override
     public void addSensor(int id, SensorType type) {
         Sensor sensor = new Sensor(id, type);
+        sensor.addReading(new Date(2017, 11, 22), 10 * Math.random());
+        sensor.addReading(new Date(2017, 11, 23), 20 * Math.random());
         sensors.add(sensor);
     }
     
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public ArrayList<ISensor> getSensors() {
+        ArrayList<ISensor> sensors = (ArrayList<ISensor>) this.sensors.clone();
+        return sensors;
     }
     
     

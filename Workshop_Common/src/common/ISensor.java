@@ -16,4 +16,7 @@ public interface ISensor {
     ArrayList<IReading> getRecords();
     ArrayList<IReading> getRecordsByInterval(Date startDate, Date endDate);
     ArrayList<IReading> getRecordsByMeasure(double measure);
+    int getID();
+    SensorType getType();
+    void addReading(Date date, double measure);
 }

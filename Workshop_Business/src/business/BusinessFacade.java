@@ -40,7 +40,7 @@ public class BusinessFacade implements IBusiness {
         int i = buildings.indexOf(building);
         if (i != -1) {
             buildings.remove(i);
-            
+            saveBuildings();
         }
 
     }

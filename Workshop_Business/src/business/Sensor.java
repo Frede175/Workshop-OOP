@@ -55,4 +55,19 @@ public class Sensor implements ISensor {
         return null;
     }
 
+    @Override
+    public int getID() {
+        return id;
+    }
+
+    @Override
+    public SensorType getType() {
+        return type;
+    }
+
+    @Override
+    public void addReading(Date date, double measure) {
+        recordings.add(new Reading(date, measure));
+    }
+
 }
