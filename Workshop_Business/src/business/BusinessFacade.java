@@ -69,7 +69,10 @@ public class BusinessFacade implements IBusiness {
 
     @Override
     public void loadBuildings() {
-        buildings = (ArrayList<Building>) persistence.load(buildings.getClass());
+        ArrayList<Building> loaded = (ArrayList<Building>) persistence.load(buildings.getClass());
+        if (loaded != null) {
+            buildings = loaded;
+        }
     }
 
     @Override

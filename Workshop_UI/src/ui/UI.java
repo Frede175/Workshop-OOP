@@ -36,7 +36,7 @@ public class UI extends Application implements IUI{
         UI.getInstance().stage = primaryStage;
         UI.getInstance().getBusiness().loadBuildings();
         Parent root;
-        if(UI.getInstance().getBusiness().getBuildings().isEmpty()) {
+        if(UI.getInstance().getBusiness().getBuildings() != null && UI.getInstance().getBusiness().getBuildings().isEmpty()) {
             root = FXMLLoader.load(getClass().getResource("fxml/AddBuilding.fxml"));
         } else {
             root = FXMLLoader.load(getClass().getResource("fxml/Graphs.fxml"));
