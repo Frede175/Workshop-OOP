@@ -12,7 +12,7 @@ package common;
 public interface IBusiness {
     void injectPersistence(IPersistence persistence);
     void createBuilding(String name, String street, String number, String zipCode, String country);
-    void createSensor(SensorType type, int id);
+    void createSensor(IBuilding building, SensorType type, int id);
     void removeBuilding(IBuilding building);
     void removeSensor(IBuilding building, ISensor sensor);
 }
